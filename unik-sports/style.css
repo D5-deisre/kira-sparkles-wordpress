@@ -1,0 +1,337 @@
+/*
+Theme Name: UniK Sports
+Theme URI: https://sports.unik.ac.ug
+Author: University of Kisubi, Department of Information Technology
+Description: Sports website theme for the University of Kisubi (UniK), featuring the Uganda International Woodball Championships.
+Version: 1.0
+Requires at least: 5.8
+Requires PHP: 7.4
+Text Domain: unik-sports
+*/
+
+/* ===== UniK Sports - style.css ===== */
+:root {
+  --primary: #0b3d91;   /* deep blue */
+  --accent: #f2b705;    /* gold */
+  --dark: #12213f;
+  --light: #f4f6fb;
+  --text: #222;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--light);
+}
+
+a { color: var(--primary); }
+img { max-width: 100%; display: block; }
+
+/* ===== Header ===== */
+header.site-header {
+  background: var(--dark);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.logo-slot {
+  width: 72px;
+  height: 72px;
+  background: #fff;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 0.65rem;
+  color: #555;
+  text-align: center;
+}
+.logo-slot img { width: 100%; height: 100%; object-fit: contain; }
+.logo-slot.logo-wide { width: 210px; padding: 4px 8px; }
+.brand { flex: 1; min-width: 220px; }
+.brand h1 { font-size: 1.9rem; letter-spacing: 1px; }
+.brand p { color: var(--accent); font-style: italic; }
+
+/* ===== Navigation ===== */
+nav.main-nav { background: var(--primary); }
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav.main-nav a {
+  display: block;
+  padding: 14px 22px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s, color 0.25s;
+}
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+/* ===== Hero (home page) ===== */
+.hero {
+  background: linear-gradient(rgba(11,61,145,.82), rgba(18,33,63,.88)),
+              url("images/unik-team.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 90px 20px;
+}
+.hero h2 { font-size: 2.3rem; margin-bottom: 10px; color: #fff; display: block; border-bottom: none; }
+.hero p { font-size: 1.15rem; margin-bottom: 24px; }
+
+/* ===== Page banners (inner pages, each with its own photo) ===== */
+.page-banner {
+  color: #fff;
+  text-align: center;
+  padding: 58px 20px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 5px solid var(--accent);
+}
+.page-banner h2 { font-size: 2.1rem; color: #fff; display: block; border-bottom: none; margin-bottom: 6px; }
+.page-banner p { max-width: 720px; margin: 0 auto; font-size: 1.05rem; }
+.banner-about   { background-image: linear-gradient(rgba(11,61,145,.80), rgba(18,33,63,.88)), url("images/players-field.jpg"); }
+.banner-news    { background-image: linear-gradient(rgba(18,33,63,.78), rgba(11,61,145,.85)), url("images/group-medals.jpg"); }
+.banner-results { background-image: linear-gradient(rgba(11,61,145,.80), rgba(18,33,63,.90)), url("images/podium.jpg"); }
+.banner-gallery { background-image: linear-gradient(rgba(18,33,63,.78), rgba(11,61,145,.82)), url("images/medallists.jpg"); }
+.banner-contact { background-image: linear-gradient(rgba(11,61,145,.82), rgba(18,33,63,.88)), url("images/championship-banner.jpg"); }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.2s;
+}
+.btn:hover { transform: translateY(-2px); background: #ffd23f; }
+.btn-dark { background: var(--primary); color: #fff; }
+.btn-dark:hover { background: #1650b8; }
+
+/* ===== Sections ===== */
+main { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+section { margin-bottom: 40px; }
+section > h2 {
+  color: var(--primary);
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  margin-bottom: 18px;
+  padding-bottom: 4px;
+}
+section h3.sub { color: var(--dark); margin: 18px 0 6px; }
+section p + p { margin-top: 10px; }
+.center { text-align: center; margin-top: 18px; }
+
+/* ===== Two-column layout ===== */
+.split { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
+.split > * { flex: 1 1 320px; }
+.split.top { align-items: flex-start; }
+figure.photo { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+figure.photo img { width: 100%; height: auto; }
+figure.photo figcaption { padding: 8px 12px; font-size: 0.9rem; color: #555; }
+
+/* ===== Logo card (About page) ===== */
+.logo-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  text-align: center;
+  border-top: 5px solid var(--accent);
+}
+.logo-card img { width: 190px; height: 190px; object-fit: contain; margin: 0 auto 10px; }
+.logo-card p { font-size: 0.9rem; color: #555; }
+
+/* ===== Info cards ===== */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  border-top: 4px solid var(--primary);
+}
+.card h3 { color: var(--primary); margin-bottom: 6px; }
+
+.steps { margin: 10px 0 0 22px; }
+.steps li { margin-bottom: 6px; }
+
+.callout {
+  background: #fff8dc;
+  border-left: 5px solid var(--accent);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 20px;
+}
+
+dl.glance { display: grid; grid-template-columns: 170px 1fr; gap: 1px; background: #d5dbea; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+dl.glance dt, dl.glance dd { background: #fff; padding: 10px 14px; }
+dl.glance dt { font-weight: 700; color: var(--primary); background: #eef2fb; }
+
+/* ===== News (home: Flexbox cards) ===== */
+.news-list { display: flex; gap: 20px; flex-wrap: wrap; }
+.news-list article {
+  flex: 1 1 280px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+.news-list h3 { color: var(--dark); margin-bottom: 4px; }
+.news-list time { font-size: 0.85rem; color: #666; }
+.news-list p { margin: 10px 0; }
+
+/* ===== News page (full articles) ===== */
+.news-feed { display: flex; flex-direction: column; gap: 24px; }
+.news-article {
+  display: flex;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.news-article figure { flex: 0 0 340px; }
+.news-article figure img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; }
+.news-body { padding: 20px; }
+.news-body h3 { color: var(--dark); }
+.news-body time { display: block; font-size: 0.85rem; color: #666; margin-bottom: 8px; }
+.news-body p { margin-bottom: 8px; }
+.tag {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+/* ===== Table ===== */
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+th, td { padding: 12px 14px; text-align: left; }
+thead { background: var(--primary); color: #fff; }
+tbody tr:nth-child(even) { background: #eef2fb; }
+tbody tr:hover { background: #fff3c4; }
+.status { font-weight: 700; }
+.status.done { color: #1b7a3a; }
+.status.soon { color: #a86b00; }
+
+/* ===== Gallery (Grid) ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+.gallery figure {
+  background: #dfe5f3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  align-self: start;
+}
+.gallery img { width: 100%; height: 190px; object-fit: cover; transition: transform 0.3s; }
+.gallery figure:hover img { transform: scale(1.05); }
+.gallery figure { overflow: hidden; }
+.gallery figcaption { padding: 8px 10px; font-size: 0.9rem; background: #fff; position: relative; }
+.gallery figure.wide { grid-column: span 2; }
+.gallery figure.wide img { height: 190px; }
+.gallery.large img { height: 240px; }
+.gallery.large figure.wide img { height: 240px; }
+
+/* ===== Forms & contact ===== */
+.contact-layout { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+.contact-layout form { flex: 1 1 420px; }
+.info-card { flex: 1 1 280px; }
+form {
+  background: #fff;
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 640px;
+}
+.form-row { margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-bottom: 4px; }
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b8c0d4;
+  border-radius: 6px;
+  font: inherit;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--primary);
+}
+.btn-reset { background: #d5dae6; margin-left: 8px; }
+
+/* ===== Footer ===== */
+footer.site-footer {
+  background: var(--dark);
+  color: #ddd;
+  padding: 30px 20px 14px;
+}
+.footer-cols {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+.footer-cols > div { flex: 1 1 220px; }
+footer h3 { color: var(--accent); margin-bottom: 8px; }
+footer a { color: #fff; }
+footer ul { list-style: none; }
+.copyright { text-align: center; margin-top: 20px; font-size: 0.85rem; color: #999; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header.site-header { flex-direction: column; text-align: center; }
+  nav.main-nav ul { flex-direction: column; }
+  nav.main-nav a { text-align: center; border-top: 1px solid rgba(255,255,255,.15); }
+  .hero { padding: 55px 16px; }
+  .hero h2 { font-size: 1.6rem; }
+  .page-banner { padding: 38px 16px; }
+  .page-banner h2 { font-size: 1.5rem; }
+  .news-list { flex-direction: column; }
+  .news-list article { flex: none; }
+  .news-article { flex-direction: column; }
+  .news-article figure { flex: none; }
+  .news-article figure img { height: 200px; min-height: 0; }
+  dl.glance { grid-template-columns: 1fr; }
+  th, td { padding: 8px 10px; font-size: 0.9rem; }
+  .gallery { grid-template-columns: 1fr; }
+  .gallery figure.wide { grid-column: span 1; }
+  .gallery figure.wide img,
+  .gallery.large img { height: 190px; }
+  .footer-cols { flex-direction: column; }
+}
