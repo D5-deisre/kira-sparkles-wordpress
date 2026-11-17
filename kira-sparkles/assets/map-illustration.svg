@@ -1,0 +1,14 @@
+<svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylised map showing the Kira Sparkles location on Entebbe Road, Kawuku">
+  <rect width="500" height="380" fill="#E7F5F1"/>
+  <g stroke="#CDEAE3" stroke-width="2">
+    <path d="M0 60 H500 M0 140 H500 M0 220 H500 M0 300 H500" />
+    <path d="M80 0 V380 M180 0 V380 M300 0 V380 M420 0 V380" />
+  </g>
+  <path d="M0 250 C 120 210, 260 260, 500 200" stroke="#0F6F66" stroke-width="10" fill="none" opacity="0.5"/>
+  <path d="M0 250 C 120 210, 260 260, 500 200" stroke="#F6F8F7" stroke-width="2" stroke-dasharray="10 10" fill="none"/>
+  <g>
+    <path d="M250 150 C 250 190, 280 210, 280 240 C 280 270, 250 290, 250 290 C 250 290, 220 270, 220 240 C 220 210, 250 190, 250 150 Z" fill="#EAB308"/>
+    <circle cx="250" cy="205" r="12" fill="#10151B"/>
+  </g>
+  <text x="250" y="320" font-family="Manrope, sans-serif" font-size="16" font-weight="700" fill="#10151B" text-anchor="middle">Entebbe Road, Kawuku</text>
+</svg>
